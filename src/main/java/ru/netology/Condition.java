@@ -70,13 +70,12 @@ public class Condition {
         }
 
         this.currentTemperature = currentTemperature + 1;
-
-
+        
     }
 
 
-    //public void decreaseCurrentTemperature() {
+    public void decreaseCurrentTemperature() {
 
-    //}
+    }
 
 }
