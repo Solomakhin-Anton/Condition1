@@ -19,13 +19,20 @@ class ConditionTest {
     void increaseCurrentTemperature() {
         Condition condition = new Condition();
 
-        condition.setCurrentTemperature(5);
-        //long temp = condition.getCurrentTemperature() + 1;
-        assertEquals(2, condition.getCurrentTemperature());
+        condition.setCurrentTemperature(6);
+        condition.increaseCurrentTemperature();
+        assertEquals(7, condition.getCurrentTemperature());
 
     }
 
+    @Test
+    void decreaseCurrentTemperature() {
+        Condition condition = new Condition();
 
+        condition.setCurrentTemperature(19);
+        condition.decreaseCurrentTemperature();
+        assertEquals(18 , condition.getCurrentTemperature());
+    }
 
 
 }
