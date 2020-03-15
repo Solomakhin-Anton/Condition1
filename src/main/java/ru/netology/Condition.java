@@ -36,15 +36,19 @@ public class Condition {
     }
 
     public void setCurrentTemperature(int currentTemperature) {
-        if (currentTemperature > maxTemperature) {
-            return;
-        }
-        if (currentTemperature < minTemperature) {
-            return;
-        }
-        // здесь уверены, что все проверки прошли
         this.currentTemperature = currentTemperature;
     }
+
+    // public void setCurrentTemperature(int currentTemperature) {
+     //   if (currentTemperature > maxTemperature) {
+       //     return;
+        //}
+        //if (currentTemperature < minTemperature) {
+          //  return;
+        //}
+        // здесь уверены, что все проверки прошли
+        //this.currentTemperature = currentTemperature;
+    //}
 
 //    public void setCurrentTemperature(int currentTemperature) {
 //        if (currentTemperature <= maxTemperature) {
@@ -64,13 +68,14 @@ public class Condition {
 
     public void increaseCurrentTemperature() {
 
-
-        if (currentTemperature > maxTemperature) {
+        //currentTemperature = currentTemperature + 1;
+        int temp = currentTemperature + 1;
+        if (temp > maxTemperature) {
             return;
         }
 
-        this.currentTemperature = currentTemperature + 1;
-        
+        this.currentTemperature = temp;
+
     }
 
 
