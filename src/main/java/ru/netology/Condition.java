@@ -39,25 +39,6 @@ public class Condition {
         this.currentTemperature = currentTemperature;
     }
 
-    // public void setCurrentTemperature(int currentTemperature) {
-     //   if (currentTemperature > maxTemperature) {
-       //     return;
-        //}
-        //if (currentTemperature < minTemperature) {
-          //  return;
-        //}
-        // здесь уверены, что все проверки прошли
-        //this.currentTemperature = currentTemperature;
-    //}
-
-//    public void setCurrentTemperature(int currentTemperature) {
-//        if (currentTemperature <= maxTemperature) {
-//            if (currentTemperature >= minTemperature) {
-//                this.currentTemperature = currentTemperature;
-//            }
-//        }
-//    }
-
     public boolean isOn() {
         return on;
     }
