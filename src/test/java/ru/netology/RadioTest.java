@@ -5,12 +5,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-
+    Radio radio = new Radio(12);
     @Test
     void increaseCurrentStation() {
-        Radio radio = new Radio();
 
-        radio.setCurrentStation(9);
+        radio.setCurrentStation(12);
         radio.increaseCurrentStation();
         assertEquals(0, radio.getCurrentStation());
         System.out.println("Current Station:" + radio.getCurrentStation());
@@ -18,7 +17,6 @@ class RadioTest {
 
     @Test
     void increaseCurrentStationPositive() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(5);
         radio.increaseCurrentStation();
@@ -28,17 +26,15 @@ class RadioTest {
 
     @Test
     void decreaseCurrentStation() {
-        Radio radio = new Radio();
 
-        radio.setCurrentStation(0);
+        radio.setCurrentVolume(0);
         radio.decreaseCurrentStation();
-        assertEquals(9, radio.getCurrentStation());
+        assertEquals(12, radio.getCurrentStation());
         System.out.println("Current Station:" + radio.getCurrentStation());
     }
 
     @Test
     void decreaseCurrentStationPositive() {
-        Radio radio = new Radio();
 
         radio.setCurrentStation(5);
         radio.decreaseCurrentStation();
@@ -48,27 +44,24 @@ class RadioTest {
 
     @Test
     void increaseCurrentVolume() {
-        Radio radio = new Radio();
 
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.increaseCurrentVolume();
-        assertEquals(10, radio.getCurrentVolume());
+        assertEquals(100, radio.getCurrentVolume());
         System.out.println("Volume:" + radio.getCurrentVolume());
     }
 
     @Test
     void increaseCurrentVolumePositive() {
-        Radio radio = new Radio();
 
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(50);
         radio.increaseCurrentVolume();
-        assertEquals(6, radio.getCurrentVolume());
+        assertEquals(51, radio.getCurrentVolume());
         System.out.println("Volume:" + radio.getCurrentVolume());
     }
 
     @Test
     void decreaseCurrentVolume() {
-        Radio radio = new Radio();
 
         radio.setCurrentVolume(0);
         radio.decreaseCurrentVolume();
@@ -78,12 +71,28 @@ class RadioTest {
 
     @Test
     void decreaseCurrentVolumePositive() {
-        Radio radio = new Radio();
 
-        radio.setCurrentVolume(5);
+        radio.setCurrentVolume(50);
         radio.decreaseCurrentVolume();
-        assertEquals(4, radio.getCurrentVolume());
+        assertEquals(49, radio.getCurrentVolume());
         System.out.println("Volume:" + radio.getCurrentVolume());
     }
 
+    @Test
+    void manualInstallation() {
+
+        radio.setCurrentStation(6);
+        radio.manualInstallation();
+        assertEquals(6, radio.getCurrentStation());
+        System.out.println("Current Station:" + radio.getCurrentStation());
+    }
+
+    @Test
+    void manualInstallationNegative() {
+
+        radio.setCurrentStation(15);
+        radio.manualInstallation();
+        assertEquals(12, radio.getCurrentStation());
+        System.out.println("Current Station:" + radio.getCurrentStation());
+    }
 }
